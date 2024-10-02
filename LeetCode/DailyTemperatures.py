@@ -14,18 +14,20 @@ it means you've found the next warmer day for that stored index.
 - If the current temperature is not warmer, push the current index onto the stack to check later.'''
 
 
-temperatures = [73, 74, 75, 71, 69, 72, 76, 73]
-
-def evalTemperature(tempList):
-    
+def dailyTemperatures(temperatures):
+    answer = [0]*len(temperatures)
     stack = []
     
-    answer = []
-    res = 0
+    for i, t in enumerate(temperatures):
+        while stack and t > stack[-1][0]:
+            stackTemp, stackIndex = stack.pop()
+            answer[stackIndex] = i - stackIndex
+        stack.append([t,i])
     
-    for i in range(0, len(tempList)-1):
-        
-        stack.append(i)
-        curr = tempList[i]
-        if i < 
+    return answer
+
+temperatures = [73,74,75,71,69,72,76,73]
+print(dailyTemperatures(temperatures))        
+
+#Answer should be : [1,1,4,2,1,1,0,0]
 
