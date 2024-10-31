@@ -1,0 +1,29 @@
+A linked list in Python is a data structure where each element, known as a node, contains a value and a reference (or link) to 
+the next node in the sequence. Unlike Python lists, which are stored in contiguous memory locations, 
+linked lists consist of nodes that can be scattered in memory, with each node pointing to the next.
+
+Types of Linked Lists:
+
+- Singly Linked List: Each node points to the next node in the sequence. The last node points to None to indicate the end of the list.
+- Doubly Linked List: Each node has two links, one to the next node and another to the previous node, allowing traversal in both directions.
+- Circular Linked List: The last node points back to the first node, making the list circular.
+
+Key Concepts of a Linked List:
+
+- Node: A structure that holds the data and a reference (or pointer) to the next node.
+- Head: The first node in the linked list.
+- Tail: The last node in the linked list (in singly linked lists, this points to None).
+- Traversal: Moving from one node to another by following the links.
+
+
+Node class:
+
+class Node:
+    def __init__(self,data):
+        self.data = data
+        self.next = None
+
+The Node class represents each element in the linked list. It has two properties:
+
+- data: The value stored in the node.
+- next: A pointer to the next node (initially set to None).
